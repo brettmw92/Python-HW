@@ -3,19 +3,29 @@ import csv
 
 csvpath = os.path.join("Resources", "budget_data.csv")
 
-months = 0
+title = []
+date = []
+profit = []
+months = -1
 net_total = 0
 greatestincrease = 0
 greatestdecrease = 0
 
+
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile,delimiter = ",")
-
-    next(csvreader)
-
     for row in csvreader:
-        months = months+1
-        # net_total = net_total + row[2]
+        months += 1
+        profit.append(row[1])
+        date.append(row[0])
+
+print(profit)
+
+    # if candidates.get(row[2]):
+    #         candidates[row[2]] +=1
+            
+    #     else:
+    #         candidates[row[2]]=1
 
 
 print(f"Total Months: {months}")
