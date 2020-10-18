@@ -47,3 +47,12 @@ print("----------------")
 print(f"{winning_candidate} is the winning candidate")
 print(f"{winning_vote} was the total vote count for {winning_candidate}")
 print("----------------")
+
+
+# printing to results.txt file
+output_file = os.path.join("analysis", "analysis.txt")
+
+with open(output_file, 'w') as csvfile:
+    csvwriter = csv.writer(csvfile, delimiter=',')
+    csvwriter.writerow([candidates])
+    csvwriter.writerow([winning_candidate])
